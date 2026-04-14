@@ -1,5 +1,6 @@
 const express = require('express');
 const authRoutes = require('./routes/AuthRoutes');
+const bookingRoutes = require('./routes/bookingsRoutes');
 
 const app = express();
 
@@ -16,5 +17,10 @@ app.get('/health', (req, res) => {
 
 // Auth routes
 app.use('/api/auth', authRoutes);
+
+// Booking routes
+app.use('/api/bookings', bookingRoutes);
+
+
 
 module.exports = app;
